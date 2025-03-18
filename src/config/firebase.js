@@ -14,7 +14,7 @@ import {
   sendPasswordResetEmail,
 } from "firebase/auth";
 import admin from "firebase-admin";
-import serviceAccount from "../FirebaseService.json" assert { type: "json" };
+import serviceAccount from "../../FirebaseService.json" assert { type: "json" };
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
