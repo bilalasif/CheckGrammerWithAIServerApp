@@ -83,7 +83,11 @@ const FirebaseAuthController = {
   logoutUser: async (req, res) => {
     try {
       await signOut(auth);
-      res.clearCookie("access_token");
+      res.clearCookie("access_token", {
+        httpOnly: true,
+        secure: true,
+        sameSite: "None",
+      });
       return res.status(200).json({ message: "User logged out successfully" });
     } catch (error) {
       console.error(error);
